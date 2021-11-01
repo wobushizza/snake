@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <tcs :mapSize="mapSize" :boxSize="boxSize"/>
   </div>
 </template>
-
+<script>
+import tcs from './views/Tcs'
+export default {
+  data(){
+    return {
+      mapSize:40,//个数 
+      boxSize:20//px 单个小方块大小
+    }
+  },
+  components:{
+    tcs
+  }
+}
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
